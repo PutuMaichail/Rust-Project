@@ -4,11 +4,13 @@ fn main() {
     println!("Hello, riski");
     
     println!("Hello, budi riski");
+}
 
 #[test]
 fn hello_test() {
     println!("This is a test function");
 }
+
 #[test]
 fn test_variabel() {
     let name: &str = "putu riski wijaya";
@@ -17,7 +19,7 @@ fn test_variabel() {
 
 #[test]
 fn static_typing() {
-    let mut name:  = "putu riski wijaya";
+    let mut name: &str  = "putu riski wijaya";
     println!("Hello, {}", name);
     
     name = "Timoty Ronald";
