@@ -26,3 +26,13 @@ fn static_typing() {
     println!("Hello, {}", name);
     
 }
+
+#[test]
+fn shadowing_typing() {
+    let name: &str = "putu riski wijaya";
+    println!("Hello, {}", name);
+    
+    let name: i64 = 123;
+    println!("Hello, {}", name);
+    
+}
