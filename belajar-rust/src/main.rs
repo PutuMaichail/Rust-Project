@@ -19,7 +19,7 @@ fn test_variabel() {
 
 #[test]
 fn static_typing() {
-    let mut name: &str  = "putu riski wijaya";
+    let mut name: &str = "putu riski wijaya";
     println!("Hello, {}", name);
     
     name = "Timoty Ronald";
