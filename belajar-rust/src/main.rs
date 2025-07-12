@@ -1,3 +1,8 @@
 fn main() {
-    println!("Hello, my world!");
+    let  result: i32 = 0;
+    println!("{:?}", result);
+}
+#[test]
+fn hello_test() {
+    main(5);
 }
