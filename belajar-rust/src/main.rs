@@ -1,7 +1,7 @@
 fn main() {
-    println!("Hello, world!");
+    println!("Hello, budi");
 
-    println!("Hello, world!");
-    println!("Hello, world!");
-
+    println!("Hello, riski");
+    
+    println!("Hello, budi riski");
 }
