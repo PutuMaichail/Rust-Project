@@ -71,11 +71,30 @@ fn number_conversion() {
 
 #[test]
 fn compound_types() {
-    let tup: (i32, f64, char) = (42, 6.28, 'Z'); 
-    let arr: [i32; 3] = [1, 2, 3];               
+    let mut tup1: (i32, f64, char) = (42, 6.28, 'Z'); 
+    let mut arr1: [i32; 3] = [1, 2, 3];               
 
-    println!("Tuple: ({}, {}, {})", tup.0, tup.1, tup.2);
-    println!("Array: [{}, {}, {}]", arr[0], arr[1], arr[2]);
+    println!("Tuple: {:?}", tup1);
+    println!("Array: {:?}", arr1);
+
+    tup1.0 = 95;
+    tup1.1 = 3.14;
+    tup1.2 = 'A';
+    println!("\nUpdated Tuple: {:?}", tup1);
+    
+    arr1[0] = 10;
+    arr1[1] = 20;
+    arr1[2] = 30;
+    println!("Updated Array: {:?}", arr1);
+}
+
+#[test]
+fn tuple() {
+    let data: (bool, char, f64) = (false, 'Z', 13.50);
+    println!("Data: {:?}", data);
+
+    let (a, b, c) = data;
+    println!("a = {}, b = {}, c = {}", a, b, c);
 }
 
 #[test]
@@ -94,4 +113,45 @@ fn numeric_operator() {
 
     let bagi: i32 = a / b;
     println!("Hasil dari {} bagi {} adalah {}", a, b, bagi);
+}
+
+#[test]
+fn augmented_assignment() {
+    let mut a: i32 = 10;
+    println!("\nData awal adalah {}", a);
+
+    a += 5;
+    println!("Hasil a += 5 adalah {}", a);
+
+    a -= 3;
+    println!("Hasil a -= 3 adalah {}", a);
+}
+
+#[test]
+fn boolean() {
+    let a: bool = true;
+    let b: bool = false;
+    println!("a = {}, b = {}", a, b);
+}
+
+#[test]
+fn comparison() {
+    let a: i32 = 25;
+    let b: i32 = 25;
+    println!("a = {}, b = {}", a, b);
+
+    let result: bool = b >= a;
+    println!("Hasil dari b > a adalah {}", result);
+}
+
+#[test]
+fn boolean_operator() {
+    let absen:i32 = 70;
+    let nilai:i32 = 80;
+
+    let lulus_absen: bool = absen >= 75;
+    let lulus_nilai: bool = nilai >= 75;
+
+    let lulus: bool = lulus_absen && lulus_nilai;
+    println!("Apakah lulus ? [{}]", lulus);
 }
