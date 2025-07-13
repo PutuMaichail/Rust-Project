@@ -90,11 +90,19 @@ fn compound_types() {
 
 #[test]
 fn tuple() {
-    let data: (bool, char, f64) = (false, 'Z', 13.50);
-    println!("Data: {:?}", data);
+    let mut data: (bool, char, f64) = (false, 'Z', 13.50);
+    println!("\nData: {:?}", data);
 
     let (a, b, c) = data;
-    println!("a = {}, b = {}, c = {}", a, b, c);
+    println!("\na = {}, b = {}, c = {}", a, b, c);
+
+    data.0 = true;
+    data.1 = 'A';
+    data.2 = 3.14;
+    println!("\nData: {:?}", data);
+
+    let (a, b, c) = data;
+    println!("\na = {}, b = {}, c = {}", a, b, c);
 }
 
 #[test]
@@ -154,4 +162,21 @@ fn boolean_operator() {
 
     let lulus: bool = lulus_absen && lulus_nilai;
     println!("Apakah lulus ? [{}]", lulus);
+}
+
+#[test]
+fn unit() {
+    println!("Hello, world")
+}
+
+#[test]
+fn test_unit() {
+    let hasil = unit();
+    println!("hasil: {:?}", hasil);
+}
+
+#[test]
+fn array() {
+    let array: [i32; 5] = [1, 2, 3, 4, 5];
+    println!("Array: {:?}", array);
 }
