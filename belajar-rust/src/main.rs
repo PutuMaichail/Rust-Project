@@ -106,6 +106,28 @@ fn tuple() {
 }
 
 #[test]
+fn array() {
+    let mut array: [i32; 5] = [1, 2, 3, 4, 5];
+    println!("\nArray: {:?}", array);
+    
+    let [a, b, c, d, e] = array;
+    println!("a = {}, b = {}, c = {}, d = {}, e = {}", a, b, c, d, e);
+
+    array[0] = 10;
+    array[1] = 20;
+    array[2] = 30;
+    array[3] = 40;
+    array[4] = 50;
+    println!("\nArray: {:?}", array);
+
+    let [a, b, c, d, e] = array;
+    println!("a = {}, b = {}, c = {}, d = {}, e = {}", a, b, c, d, e);
+
+    let leght = array.len();
+    println!("\nPanjang array adalah {}", leght);
+}
+
+#[test]
 fn numeric_operator() {
     let a: i32 = 10;
     let b: i32 =5;
@@ -175,8 +197,3 @@ fn test_unit() {
     println!("hasil: {:?}", hasil);
 }
 
-#[test]
-fn array() {
-    let array: [i32; 5] = [1, 2, 3, 4, 5];
-    println!("Array: {:?}", array);
-}
