@@ -223,3 +223,12 @@ fn two_dimesion_array() {
     println!("Kordinat (2, 1): {:?}", matrix[2][1]);
     println!("Kordinat (2, 2): {:?}", matrix[2][2]);
 }
+
+const WAKTU_TUNGGU_MAKSIMUM: u32 = 60;
+const PI: f64 = 3.14159;
+
+#[test]
+fn test_const() {
+    println!("WAKTU_TUNGGU_MAKSIMUM = {}", WAKTU_TUNGGU_MAKSIMUM);
+    println!("PI = {}", PI);
+}
