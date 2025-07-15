@@ -154,7 +154,7 @@ fn unit() {
 
 #[test]
 fn test_unit() {
-    let hasil = unit();
+    let hasil: () = unit();
     println!("hasil: {:?}", hasil);
 }
 
@@ -236,15 +236,15 @@ fn test_const() {
 }
 #[test]
 fn variabel_scope() {
-    let eko = 1;
+    let eko: i32 = 1;
 
     {
-        let budi = 2;
+        let budi: i32 = 2;
         println!("\neko = {}, budi = {}", eko, budi);
     }
 
     {
-        let riski = 3;
+        let riski: i32 = 3;
         println!("eko = {}, riski = {}", eko, riski);
     }
 
@@ -259,26 +259,43 @@ fn stack_heap() {
 
 #[test]
 fn function_a() {
-    let a =10;
-    let b = String::from("eko");
+    let a: i32 =10;
+    let b: String = String::from("eko");
 
     println!("\n{}, {}", a, b);
 }
 
 #[test]
 fn function_b() {
-    let a = 15;
-    let b = String::from("budi");
+    let a: i32 = 15;
+    let b: String = String::from("budi");
 
     println!("{}, {}", a, b);
 }
 
 #[test]
 fn string() {
-    let name = "  Hello  ";
-    println!("\nData awal: '{}'", name);
+    let name: &str = "  Eko arab kurniawan  ";
+    let trim: &str = name.trim();
     
-    let trim = name.trim();
+    println!("\nNama awal: [{}]", name);
+    println!("Data ahkir: [{}]", trim);
+
+    let mut username: &str = "Budi hartono";
+    println!("\nUsername awal: {}", username);
     
-    println!("Setelah trim: '{}'", trim);
+    username = "Timoty Ronald";
+    println!("Username akhir: {}", username);
+}
+
+#[test]
+fn string_type() {
+    let mut name0: String = String::from("Eko Kurniawan");
+    println!("\nNama: {}", name0);
+    
+    name0.push_str(" khanedy");
+    println!("\nNama: {}", name0);
+
+    let name1 = name0.replace("Eko", "Budi");
+    println!("\nNama: {}", name1);
 }
