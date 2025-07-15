@@ -164,7 +164,7 @@ fn tuple() {
     println!("\nData: {:?}", data);
 
     let (a, b, c) = data;
-    println!("\na = {}, b = {}, c = {}", a, b, c);
+    println!("a = {}, b = {}, c = {}", a, b, c);
 
     data.0 = true;
     data.1 = 'A';
@@ -172,7 +172,7 @@ fn tuple() {
     println!("\nData: {:?}", data);
 
     let (a, b, c) = data;
-    println!("\na = {}, b = {}, c = {}", a, b, c);
+    println!("a = {}, b = {}, c = {}", a, b, c);
 }
 
 #[test]
