@@ -89,45 +89,6 @@ fn compound_types() {
 }
 
 #[test]
-fn tuple() {
-    let mut data: (bool, char, f64) = (false, 'Z', 13.50);
-    println!("\nData: {:?}", data);
-
-    let (a, b, c) = data;
-    println!("\na = {}, b = {}, c = {}", a, b, c);
-
-    data.0 = true;
-    data.1 = 'A';
-    data.2 = 3.14;
-    println!("\nData: {:?}", data);
-
-    let (a, b, c) = data;
-    println!("\na = {}, b = {}, c = {}", a, b, c);
-}
-
-#[test]
-fn array() {
-    let mut array: [i32; 5] = [1, 2, 3, 4, 5];
-    println!("\nArray: {:?}", array);
-    
-    let [a, b, c, d, e] = array;
-    println!("a = {}, b = {}, c = {}, d = {}, e = {}", a, b, c, d, e);
-
-    array[0] = 10;
-    array[1] = 20;
-    array[2] = 30;
-    array[3] = 40;
-    array[4] = 50;
-    println!("\nArray: {:?}", array);
-
-    let [a, b, c, d, e] = array;
-    println!("a = {}, b = {}, c = {}, d = {}, e = {}", a, b, c, d, e);
-
-    let leght = array.len();
-    println!("\nPanjang array adalah {}", leght);
-}
-
-#[test]
 fn numeric_operator() {
     let a: i32 = 10;
     let b: i32 =5;
@@ -197,3 +158,68 @@ fn test_unit() {
     println!("hasil: {:?}", hasil);
 }
 
+#[test]
+fn tuple() {
+    let mut data: (bool, char, f64) = (false, 'Z', 13.50);
+    println!("\nData: {:?}", data);
+
+    let (a, b, c) = data;
+    println!("\na = {}, b = {}, c = {}", a, b, c);
+
+    data.0 = true;
+    data.1 = 'A';
+    data.2 = 3.14;
+    println!("\nData: {:?}", data);
+
+    let (a, b, c) = data;
+    println!("\na = {}, b = {}, c = {}", a, b, c);
+}
+
+#[test]
+fn array() {
+    let mut array: [i32; 5] = [1, 2, 3, 4, 5];
+    println!("\nArray: {:?}", array);
+    
+    let [a, b, c, d, e] = array;
+    println!("a = {}, b = {}, c = {}, d = {}, e = {}", a, b, c, d, e);
+
+    array[0] = 10;
+    array[1] = 20;
+    array[2] = 30;
+    array[3] = 40;
+    array[4] = 50;
+    println!("\nArray: {:?}", array);
+
+    let [a, b, c, d, e] = array;
+    println!("a = {}, b = {}, c = {}, d = {}, e = {}", a, b, c, d, e);
+
+    let leght = array.len();
+    println!("\nPanjang array adalah {}", leght);
+}
+
+#[test]
+fn two_dimesion_array() {
+    let matrix: [[i32; 3]; 3] = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ];
+
+    println!("\nMatrix: {:?}", matrix);
+
+    println!("\nKordinat matrix (1): {:?}", matrix[0]);
+    println!("Kordinat matrix (2): {:?}", matrix[1]);
+    println!("Kordinat matrix (3): {:?}", matrix[2]);
+
+    println!("\nKordinat (0, 0): {:?}", matrix[0][0]);
+    println!("Kordinat (0, 1): {:?}", matrix[0][1]);
+    println!("Kordinat (0, 2): {:?}", matrix[0][2]);
+
+    println!("\nKordinat (1, 0): {:?}", matrix[1][0]);
+    println!("Kordinat (1, 1): {:?}", matrix[1][1]);
+    println!("Kordinat (1, 2): {:?}", matrix[1][2]);
+
+    println!("\nKordinat (2, 0): {:?}", matrix[2][0]);
+    println!("Kordinat (2, 1): {:?}", matrix[2][1]);
+    println!("Kordinat (2, 2): {:?}", matrix[2][2]);
+}
