@@ -224,11 +224,61 @@ fn two_dimesion_array() {
     println!("Kordinat (2, 2): {:?}", matrix[2][2]);
 }
 
+#[allow(dead_code)]
 const WAKTU_TUNGGU_MAKSIMUM: u32 = 60;
+#[allow(dead_code)]
 const PI: f64 = 3.14159;
 
 #[test]
 fn test_const() {
     println!("WAKTU_TUNGGU_MAKSIMUM = {}", WAKTU_TUNGGU_MAKSIMUM);
     println!("PI = {}", PI);
+}
+#[test]
+fn variabel_scope() {
+    let eko = 1;
+
+    {
+        let budi = 2;
+        println!("\neko = {}, budi = {}", eko, budi);
+    }
+
+    {
+        let riski = 3;
+        println!("eko = {}, riski = {}", eko, riski);
+    }
+
+    println!("\neko = {}", eko);
+}
+
+#[test]
+fn stack_heap() {
+    function_a();
+    function_b();
+}
+
+#[test]
+fn function_a() {
+    let a =10;
+    let b = String::from("eko");
+
+    println!("\n{}, {}", a, b);
+}
+
+#[test]
+fn function_b() {
+    let a = 15;
+    let b = String::from("budi");
+
+    println!("{}, {}", a, b);
+}
+
+#[test]
+fn string() {
+    let name = "  Hello  ";
+    println!("\nData awal: '{}'", name);
+    
+    let trim = name.trim();
+    
+    println!("Setelah trim: '{}'", trim);
 }
