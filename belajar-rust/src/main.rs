@@ -299,3 +299,16 @@ fn string_type() {
     let name1 = name0.replace("Eko", "Budi");
     println!("\nNama: {}", name1);
 }
+
+#[test]
+fn ownership_rules() {
+    // Data a belum bisa di akses disini, belum di deklarasikan
+    let a =10; // Data a bisa di akses di sisni
+
+    { // Data b belum bisa di akses disini, belum di deklarasikan
+        let b = 20; // Data b bisa di akses di sisni
+        println!("{}", b);
+    } // scope b selesai, b dihapus, b tidak dapat di akses lagi
+
+    println!("{}", a);
+}   // scope a selesai, a dihapus, a tidak dapat di akses lagi
