@@ -312,3 +312,94 @@ fn ownership_rules() {
 
     println!("{}", a);
 }   // scope a selesai, a dihapus, a tidak dapat di akses lagi
+
+#[test]
+fn ownership_movement() {
+    let name1 = String::from("Timoty Ronald");
+    println!("[1] {}", name1);
+
+    // Ownership berpindah dari name1 ke name2
+    let name2 = name1; 
+    // name1 tidak dapat diakses lagi setelah ini
+    
+    println!("[2] {}", name2); // name2 sekarang memiliki ownership dari String
+}
+
+#[test]
+fn clone() {
+    let name1 = String::from("Timoty Ronald");
+    println!("[1] {}", name1);
+
+    // Clone membuat salinan dari String
+    let name2 = name1.clone(); 
+    // name1 masih dapat diakses setelah ini
+    
+    println!("[2] {}, {}", name1, name2) // name1 masih memiliki ownership dari String
+    // name2 sekarang memiliki salinan dari String
+}
+
+#[test]
+fn if_expresion() {
+    let value: i32 = 9;
+
+    let result: &str = if value >= 8 {
+        "Good"
+    } else if value >= 6 {
+        "Not Bad"
+    } else if value >= 3 {
+        "Bad"
+    } else {
+        "Very Bad"
+    };
+
+    println!("[{}]", result);
+}
+
+#[test]
+fn loop_expreseion() {
+    let mut count  = 0;
+    loop {
+        count += 1;
+
+        if count == 100 {
+            break;
+        } else if count % 2 == 1 {
+            continue;
+        }
+
+        println!("count = {}", count);
+    }
+}
+
+#[test]
+fn loop_return_value() {
+    let mut count: i32 = 0;
+    let result: i32 = loop {
+        count += 1;
+        if count == 10 {
+            break count * 2; 
+        }
+    };
+    println!("result = {}", result);
+}
+
+#[test]
+fn loop_label() {
+    let mut number = 1;
+    'outer: loop {
+        let mut i = 1;
+        loop {
+            if number > 10 {
+                break 'outer; 
+            }
+            
+            println!("\n[{}] x [{}] = {}", number, i, number * i);
+            i += 1;
+            if i > 10 {
+                break; 
+            }
+        }
+        number += 1;
+    } 
+    println!("\nLoop finished");
+}
