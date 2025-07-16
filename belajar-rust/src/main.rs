@@ -357,27 +357,27 @@ fn if_expresion() {
 
 #[test]
 fn loop_expreseion() {
-    let mut count  = 0;
+    let mut counter  = 0;
     loop {
-        count += 1;
+        counter += 1;
 
-        if count == 100 {
+        if counter == 100 {
             break;
-        } else if count % 2 == 1 {
+        } else if counter % 2 == 1 {
             continue;
         }
 
-        println!("count = {}", count);
+        println!("counter = {}", counter);
     }
 }
 
 #[test]
 fn loop_return_value() {
-    let mut count: i32 = 0;
+    let mut counter: i32 = 0;
     let result: i32 = loop {
-        count += 1;
-        if count == 10 {
-            break count * 2; 
+        counter += 1;
+        if counter == 10 {
+            break counter * 2; 
         }
     };
     println!("result = {}", result);
@@ -402,4 +402,66 @@ fn loop_label() {
         number += 1;
     } 
     println!("\nLoop finished");
+}
+
+#[test]
+fn while_loop() {
+    let mut counter = 0;
+    while counter <= 10 {
+        if counter % 2 == 0 {
+            println!("counter = {}", counter);
+        } 
+        counter += 1;
+    }
+}
+
+#[test]
+fn array_iteration() {
+    let arr: [&str; 5] = ["A", "B", "C", "D", "E"];
+    let mut index = 0;
+
+    while index < arr.len() {
+        println!("Value {}: {}", index, arr[index]);
+        index += 1;
+    }      
+    
+    println!("");
+
+    let mut iter = arr.iter().enumerate();
+    while let Some((index, value)) = iter.next() {
+        println!("(while let) Value {}: {}", index, value);
+    }
+}
+
+#[test]
+fn array_iteration_for_loop() {
+    let arr: [&str; 5] = ["Z", "Y", "X", "W", "P"];
+
+    for value in arr {
+        println!("Value: {}", value);
+    }     
+
+    println!("");
+
+    for (index, value) in arr.iter().enumerate() {
+        println!("Index: {}, Value: {}", index, value);
+    }  
+
+    print!("\n");
+
+    for index in 0..arr.len() {
+        println!("Index: {}, Value: {}", index, arr[index]);
+    }
+
+    println!("");
+
+    for index in (0..arr.len()).rev() {
+        println!("(reverse) Index: {}, Value: {}", index, arr[index]);
+    }
+
+    println!("");
+
+    for value in arr.iter() {
+        println!("(iter) Value: {}", value);
+    }
 }
