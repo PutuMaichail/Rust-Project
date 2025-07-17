@@ -465,3 +465,71 @@ fn array_iteration_for_loop() {
         println!("(iter) Value: {}", value);
     }
 }
+
+#[test]
+fn range() {
+    let arr: [&str; 5] = ["Z", "Y", "X", "W", "P"];
+
+    let range = 0..5;
+    println!("Start: {}", range.start);
+    println!("End  : {}", range.end);
+    
+    println!("");
+
+    for index in 0..=4 {
+        println!("Index: {}, Value: {}", index, arr[index]);
+    }
+}
+
+#[test]
+fn range_inclusive() {
+    let range = 0..=4;
+
+    println!("Start: {:?}", range.start());
+    println!("End  : {:?}", range.end());
+
+    let arr: [&str; 5] = ["Z", "Y", "X", "W", "P"];
+    
+    println!("");
+
+    for index in range {
+        println!("Index: {}, Value: {}", index, arr[index]);
+    }
+}
+#[allow(dead_code)]
+fn say_goodbye(first_name: &str, last_name: &str) {
+    println!("Goodbye, {} {}", first_name, last_name);
+}
+
+#[test]
+fn goodbye_fn() {
+    println!("");
+    say_goodbye("Putu", "Chandra");
+    say_goodbye("Budi", "Hartono");
+    say_goodbye("Timoty", "Ronald");
+    say_goodbye("Eko", "Kurniawan");
+    say_goodbye("Riski", "Wijaya");
+}
+
+#[allow(dead_code)]
+fn factorial_loop(n: i32) -> i32 {
+    let mut result = 1;
+    let mut i = 1;
+
+    while i <= n {
+        result *= i;
+        i += 1;
+    }
+
+    result
+    
+}
+
+#[test]
+fn tetst_factorial_loop() {
+    let result = factorial_loop(3);
+    println!("Factorial of 5 is: {}", result);
+
+    let result = factorial_loop(0);
+    println!("Factorial of 5 is: {}", result);
+}
