@@ -127,7 +127,7 @@ fn boolean() {
 
 #[test]
 fn comparison() {
-    let a: i32 = 25;
+    let a: i32 = 30;
     let b: i32 = 25;
     println!("a = {}, b = {}", a, b);
 
